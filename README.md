@@ -1,1 +1,1 @@
-# UWDjangoBlog
+# django-blog
