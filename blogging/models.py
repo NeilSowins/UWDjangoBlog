@@ -11,3 +11,14 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+class Category(models.Model):
+
+    # name
+    # description
+    # posts
+
+    name = models.CharField(max_length=128)
+    description = models.CharField(blank=True)
+
+    pass
