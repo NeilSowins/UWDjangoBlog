@@ -1,6 +1,8 @@
 from django.contrib import admin
 from blogging.models import Post, Category
+
 # Register your models here.
+
 
 class CategoriesInline(admin.TabularInline):
     model = Category
@@ -8,11 +10,9 @@ class CategoriesInline(admin.TabularInline):
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    inlines = [
-        CategoriesInline
-    ]
+    inlines = [CategoriesInline]
 
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    exclude = ('posts',)
+    exclude = ("posts",)
