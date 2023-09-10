@@ -28,12 +28,3 @@ class BloggingDetailView(DetailView):
             return queryset.get(pk=key)
         except Post.DoesNotExist:
             raise Http404
-
-# def detail_view(request, post_id):
-#     published = Post.objects.exclude(published_date__exact=None)
-#     try:
-#         post = published.get(pk=post_id)
-#     except Post.DoesNotExist:
-#         raise Http404
-#     context = {'post': post}
-#     return render(request, 'blogging/detail.html', context)
