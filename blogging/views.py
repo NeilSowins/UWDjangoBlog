@@ -37,24 +37,28 @@ class BloggingDetailView(DetailView):
 
 
 class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all().order_by('-date_joined')
+    queryset = User.objects.all().order_by("-date_joined")
     serializer_class = UserSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
 
 class PostViewSet(viewsets.ModelViewSet):
-    '''
+    """
     API endpoint that allows Posts to be viewed or edited.
-    '''
-    queryset = Post.objects.exclude(published_date__exact=None).order_by('-published_date')
+    """
+
+    queryset = Post.objects.exclude(published_date__exact=None).order_by(
+        "-published_date"
+    )
     serializer_class = PostSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
 
 class CategoryViewSet(viewsets.ModelViewSet):
-    '''
+    """
     API endpoint that allows Category to be viewed or edited.
-    '''
+    """
+
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]

@@ -1,12 +1,18 @@
 from django.urls import path, include
 from rest_framework import routers
-from blogging.views import BloggingListView, BloggingDetailView, PostViewSet, CategoryViewSet, UserViewSet
+from blogging.views import (
+    BloggingListView,
+    BloggingDetailView,
+    PostViewSet,
+    CategoryViewSet,
+    UserViewSet,
+)
 
 
 router = routers.DefaultRouter()
-router.register(r'posts', PostViewSet)
-router.register(r'categories', CategoryViewSet)
-router.register(r'users', UserViewSet, basename='user-detail')
+router.register(r"posts", PostViewSet)
+router.register(r"categories", CategoryViewSet)
+router.register(r"users", UserViewSet, basename="user-detail")
 
 
 urlpatterns = [
